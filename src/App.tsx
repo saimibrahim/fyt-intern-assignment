@@ -47,7 +47,7 @@ export default class App extends Component<string[],  { dataSource: CachedAsset[
     for (let i = 0; i < imageNames.length; i++) {
       if (dataSource.filter((asset) => asset.remoteURI === imageURIs[i]).length == 0) {
         // in this case there is nothing with the URI which is cached, so we will we create a new CacheAsset
-        await FileSystem.downloadAsync( imageURIs[i], FileSystem.documentDirectory + imageNames[i] + '.png').then(({ uri }) => {
+        await FileSystem.downloadAsync(imageURIs[i], FileSystem.documentDirectory + imageNames[i] + '.png').then(({ uri }) => {
           dataSource.push(new CachedAsset(imageURIs[i], uri));
         })
         .catch(error => {
@@ -69,7 +69,7 @@ export default class App extends Component<string[],  { dataSource: CachedAsset[
     this.checkCache(this.state.imageData, this.state.dataSource);
   }
   
-
+  // TODO: fix rendering issue where non of the images currently display on screen
   render() {
     return (
       <View style={{margin: 5}}>
