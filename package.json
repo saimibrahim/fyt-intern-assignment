@@ -4,9 +4,17 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|sentry-expo|native-base))"
+    ]
   },
   "dependencies": {
+    "@types/jest": "^24.0.13",
     "expo": "^32.0.0",
     "firebase": "^6.0.2",
     "react": "16.5.0",
@@ -16,6 +24,8 @@
     "@types/expo": "^32.0.13",
     "@types/react": "^16.8.17",
     "babel-preset-expo": "^5.0.0",
+    "jest-expo": "^32.0.0",
+    "react-test-renderer": "^16.8.6",
     "tslint": "^5.16.0",
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.4.5"
